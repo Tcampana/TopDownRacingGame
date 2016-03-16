@@ -18,6 +18,7 @@ public class Rennspiel
   private JFrame mainFrame;
   private JLabel main;
   private JLabel menu;
+  private JLabel statusLabel;
   private JPanel controlPanel;
   
   public Rennspiel()
@@ -34,11 +35,12 @@ public class Rennspiel
   private void prepareGUI()
   {
     mainFrame = new JFrame("Rennspiel");
-    mainFrame.setSize(300,300);
-    mainFrame.setLayout(new GridLayout(3, 1));
+    mainFrame.setSize(915,720);
+    mainFrame.setLayout(new GridLayout(4, 3));
       
       main = new JLabel("",JLabel.CENTER);
       menu = new JLabel("",JLabel.CENTER);
+      statusLabel = new JLabel ("",JLabel.WEST);
       
       mainFrame.addWindowListener(new WindowAdapter() 
         {
@@ -53,6 +55,7 @@ public class Rennspiel
       mainFrame.add(main);
       mainFrame.add(menu);
       mainFrame.add(controlPanel);
+      mainFrame.add(statusLabel);
       mainFrame.setVisible(true);
   }
   private void showInterface ()
@@ -76,16 +79,16 @@ public class Rennspiel
   }
   private class ClickListener implements ActionListener
   {
-    public void interaction(ActionEvent e)
+    public void actionPerformed(ActionEvent e)
     {
       String command = e.getActionCommand();
       if(command.equals("Start Game"))
       {
-        
+       statusLabel.setText("Game Started!");
       }
       else if(command.equals("Quit Game"))
       {
-        
+        statusLabel.setText("Game Quit!");
       }
     }
   }
