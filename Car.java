@@ -1,0 +1,13 @@
+public class Car
+{
+  //code to steer left, I'm not sure if using boolean is the right choice for these.
+  private boolean steerL;
+  //code to steer right
+  private boolean steerR;
+  
+  public Car(boolean steerL, boolean steerR)
+  {
+    this.steerL = steerL;
+    this.steerR = steerR;
+  }
+}
